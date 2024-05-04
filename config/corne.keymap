@@ -9,18 +9,67 @@
 
 / {
     macros {
-        shift_tab: shift_tab {
+        launch_slack: launch_slack {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT &kp TAB>;
-            label = "SHIFT_TAB";
+            bindings = <&spotlight_search &kp LS(S) &kp L &kp A &kp C &kp K &kp DOT &kp A &kp P &kp P &kp ENTER>;
+            label = "LAUNCH_SLACK";
         };
 
-        alt_backspace: alt_backspace {
+        launch_chrome: launch_chrome {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp BACKSPACE>;
-            label = "ALT_BACKSPACE";
+            bindings = <&spotlight_search &kp LS(G) &kp O &kp O &kp G &kp L &kp E &kp SPACE &kp LS(C) &kp H &kp R &kp O &kp M &kp E &kp DOT &kp A &kp P &kp P &kp ENTER>;
+            label = "LAUNCH_CHROME";
+        };
+
+        spotlight_search: spotlight_search {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(SPACE)>;
+            label = "SPOTLIGHT_SEARCH";
+        };
+
+        launch_notion: launch_notion {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&spotlight_search &kp LS(N) &kp O &kp T &kp I &kp O &kp N &kp DOT &kp A &kp P &kp P &kp ENTER>;
+            label = "LAUNCH_NOTION";
+        };
+
+        launch_vscode: launch_vscode {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&spotlight_search &kp LS(V) &kp I &kp S &kp U &kp A &kp L &kp SPACE &kp LS(S) &kp T &kp U &kp D &kp I &kp O &kp SPACE &kp LS(C) &kp O &kp D &kp E &kp DOT &kp A &kp P &kp P &kp RET>;
+            label = "LAUNCH_VSCODE";
+        };
+
+        launch_android_studio: launch_android_studio {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&spotlight_search &kp LS(A) &kp N &kp D &kp R &kp O &kp I &kp D &kp SPACE &kp LS(S) &kp T &kp U &kp D &kp I &kp O &kp DOT &kp A &kp P &kp P &kp RET>;
+            label = "LAUNCH_ANDROID_STUDIO";
+        };
+
+        launch_xcode: launch_xcode {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&spotlight_search &kp LS(X) &kp C &kp O &kp D &kp E &kp DOT &kp A &kp P &kp P &kp RET>;
+            label = "LAUNCH_XCODE";
+        };
+
+        launch_simulator_ios: launch_simulator_ios {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&spotlight_search &kp LS(S) &kp I &kp M &kp U &kp L &kp A &kp T &kp O &kp R &kp DOT &kp A &kp P &kp P &kp RET>;
+            label = "LAUNCH_SIMULATOR_IOS";
+        };
+
+        launch_telegram: launch_telegram {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&spotlight_search &kp LS(T) &kp E &kp L &kp E &kp G &kp R &kp A &kp M &kp DOT &kp A &kp P &kp P &kp RET>;
+            label = "LAUNCH_TELEGRAM";
         };
     };
 
@@ -50,10 +99,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESC           &kp N1        &kp N2       &kp N3        &kp N4   &kp N5       &kp N6   &kp N7  &kp N8    &kp N9  &kp N0  &kp LA(BACKSPACE)
-&kp LEFT_CONTROL  &kp CAPSLOCK  &kp LS(TAB)  &kp LEFT_GUI  &kp TAB  &trans       &trans   &trans  &trans    &trans  &trans  &trans
-&kp LSHFT         &kp LEFT_ALT  &kp LS(TAB)  &kp LCTRL     &kp TAB  &trans       &trans   &trans  &trans    &trans  &trans  &trans
-                                             &kp LGUI      &trans   &kp SPACE    &kp RET  &trans  &kp RALT
+&kp ESC           &kp N1        &kp N2       &kp N3        &kp N4   &kp N5       &kp N6              &kp N7              &kp N8            &kp N9         &kp N0  &kp LA(BACKSPACE)
+&kp LEFT_CONTROL  &kp CAPSLOCK  &kp LS(TAB)  &kp LEFT_GUI  &kp TAB  &trans       &kp LA(LEFT_ARROW)  &kp LA(DOWN_ARROW)  &kp LA(UP_ARROW)  &kp LA(RIGHT)  &trans  &trans
+&kp LSHFT         &kp LEFT_ALT  &kp LS(TAB)  &kp LCTRL     &kp TAB  &trans       &trans              &trans              &trans            &trans         &trans  &trans
+                                             &kp LGUI      &trans   &kp SPACE    &kp RET             &trans              &kp RALT
             >;
         };
 
@@ -77,16 +126,25 @@
 &kp TAB         &trans        &trans  &trans        &trans  &trans       &trans     &trans    &trans        &trans     &trans  &trans
 &kp LCTRL       &trans        &trans  &trans        &trans  &trans       &kp LEFT   &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans  &trans
 &kp LEFT_SHIFT  &kp LEFT_ALT  &trans  &trans        &trans  &trans       &trans     &trans    &trans        &trans     &trans  &trans
-                                      &kp LEFT_GUI  &trans  &kp SPACE    &kp ENTER  &trans    &trans
+                                      &kp LEFT_GUI  &mo 5   &kp SPACE    &kp ENTER  &trans    &trans
             >;
         };
 
         four_function {
             bindings = <
-&kp TAB           &trans  &trans  &trans  &trans  &trans       &trans        &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&kp LEFT_CONTROL  &trans  &trans  &trans  &trans  &trans       &kp LEFT_ALT  &kp F4  &kp F5  &kp F6  &kp F12  &trans
-&kp LEFT_SHIFT    &trans  &trans  &trans  &trans  &trans       &trans        &kp F1  &kp F2  &kp F3  &trans   &trans
-                                  &trans  &trans  &kp SPACE    &kp ENTER     &trans  &trans
+&kp TAB           &trans        &trans                    &trans         &kp LG(LS(NUMBER_5))  &kp LC(GRAVE)    &trans        &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
+&kp LEFT_CONTROL  &trans        &kp LG(LC(LS(NUMBER_4)))  &kp LG(LA(J))  &spotlight_search     &trans           &kp LEFT_ALT  &kp F4  &kp F5  &kp F6  &kp F12  &trans
+&kp LEFT_SHIFT    &kp LEFT_ALT  &trans                    &trans         &trans                &trans           &trans        &kp F1  &kp F2  &kp F3  &trans   &trans
+                                                          &kp LEFT_GUI   &trans                &kp SPACE        &kp ENTER     &trans  &trans
+            >;
+        };
+
+        five_shortcuts {
+            bindings = <
+&kp TAB           &trans                  &trans         &trans          &trans          &launch_telegram    &trans     &trans          &launch_simulator_ios  &trans  &trans  &trans
+&kp LEFT_CONTROL  &launch_android_studio  &launch_slack  &trans          &trans          &trans              &trans     &trans          &trans                 &trans  &trans  &trans
+&kp LEFT_SHIFT    &kp LEFT_ALT            &launch_xcode  &launch_chrome  &launch_vscode  &trans              &trans     &launch_notion  &trans                 &trans  &trans  &trans
+                                                         &kp LEFT_GUI    &trans          &kp SPACE           &kp ENTER  &trans          &trans
             >;
         };
     };
