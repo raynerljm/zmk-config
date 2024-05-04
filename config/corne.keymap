@@ -14,6 +14,7 @@
             #binding-cells = <0>;
             bindings = <&spotlight_search &kp LS(S) &kp L &kp A &kp C &kp K &kp DOT &kp A &kp P &kp P &kp ENTER>;
             label = "LAUNCH_SLACK";
+            wait-ms = <2>;
         };
 
         launch_chrome: launch_chrome {
@@ -21,6 +22,7 @@
             #binding-cells = <0>;
             bindings = <&spotlight_search &kp LS(G) &kp O &kp O &kp G &kp L &kp E &kp SPACE &kp LS(C) &kp H &kp R &kp O &kp M &kp E &kp DOT &kp A &kp P &kp P &kp ENTER>;
             label = "LAUNCH_CHROME";
+            wait-ms = <2>;
         };
 
         spotlight_search: spotlight_search {
@@ -35,6 +37,7 @@
             #binding-cells = <0>;
             bindings = <&spotlight_search &kp LS(N) &kp O &kp T &kp I &kp O &kp N &kp DOT &kp A &kp P &kp P &kp ENTER>;
             label = "LAUNCH_NOTION";
+            wait-ms = <2>;
         };
 
         launch_vscode: launch_vscode {
@@ -42,6 +45,7 @@
             #binding-cells = <0>;
             bindings = <&spotlight_search &kp LS(V) &kp I &kp S &kp U &kp A &kp L &kp SPACE &kp LS(S) &kp T &kp U &kp D &kp I &kp O &kp SPACE &kp LS(C) &kp O &kp D &kp E &kp DOT &kp A &kp P &kp P &kp RET>;
             label = "LAUNCH_VSCODE";
+            wait-ms = <2>;
         };
 
         launch_android_studio: launch_android_studio {
@@ -49,6 +53,7 @@
             #binding-cells = <0>;
             bindings = <&spotlight_search &kp LS(A) &kp N &kp D &kp R &kp O &kp I &kp D &kp SPACE &kp LS(S) &kp T &kp U &kp D &kp I &kp O &kp DOT &kp A &kp P &kp P &kp RET>;
             label = "LAUNCH_ANDROID_STUDIO";
+            wait-ms = <2>;
         };
 
         launch_xcode: launch_xcode {
@@ -56,6 +61,7 @@
             #binding-cells = <0>;
             bindings = <&spotlight_search &kp LS(X) &kp C &kp O &kp D &kp E &kp DOT &kp A &kp P &kp P &kp RET>;
             label = "LAUNCH_XCODE";
+            wait-ms = <2>;
         };
 
         launch_simulator_ios: launch_simulator_ios {
@@ -63,6 +69,7 @@
             #binding-cells = <0>;
             bindings = <&spotlight_search &kp LS(S) &kp I &kp M &kp U &kp L &kp A &kp T &kp O &kp R &kp DOT &kp A &kp P &kp P &kp RET>;
             label = "LAUNCH_SIMULATOR_IOS";
+            wait-ms = <2>;
         };
 
         launch_telegram: launch_telegram {
@@ -70,6 +77,7 @@
             #binding-cells = <0>;
             bindings = <&spotlight_search &kp LS(T) &kp E &kp L &kp E &kp G &kp R &kp A &kp M &kp DOT &kp A &kp P &kp P &kp RET>;
             label = "LAUNCH_TELEGRAM";
+            wait-ms = <2>;
         };
     };
 
