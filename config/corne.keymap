@@ -80,6 +80,21 @@
             label = "LAUNCH_TELEGRAM";
             wait-ms = <2>;
         };
+
+        launch_spotify: launch_spotify {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&spotlight_search &kp LS(S) &kp P &kp O &kp T &kp I &kp F &kp Y &kp RET>;
+            label = "LAUNCH_SPOTIFY";
+            wait-ms = <2>;
+        };
+
+        launch_figma: launch_figma {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&spotlight_search &kp LS(F) &kp I &kp G &kp M &kp A &kp RET>;
+            label = "LAUNCH_FIGMA";
+        };
     };
 
     keymap {
@@ -150,10 +165,10 @@
 
         five_shortcuts {
             bindings = <
-&kp TAB           &trans                  &trans         &trans          &trans          &launch_telegram    &trans     &trans          &launch_simulator_ios  &trans  &trans  &trans
-&kp LEFT_CONTROL  &launch_android_studio  &launch_slack  &trans          &trans          &trans              &trans     &trans          &trans                 &trans  &trans  &trans
-&kp LEFT_SHIFT    &kp LEFT_ALT            &launch_xcode  &launch_chrome  &launch_vscode  &trans              &trans     &launch_notion  &trans                 &trans  &trans  &trans
-                                                         &kp LEFT_GUI    &trans          &kp SPACE           &kp ENTER  &trans          &trans
+&kp TAB           &trans                  &trans         &trans          &trans          &launch_telegram    &trans          &trans           &launch_simulator_ios  &trans  &trans  &trans
+&kp LEFT_CONTROL  &launch_android_studio  &launch_slack  &trans          &launch_figma   &trans              &trans          &trans           &trans                 &trans  &trans  &trans
+&kp LEFT_SHIFT    &kp LEFT_ALT            &launch_xcode  &launch_chrome  &launch_vscode  &trans              &launch_notion  &launch_spotify  &trans                 &trans  &trans  &trans
+                                                         &kp LEFT_GUI    &trans          &kp SPACE           &kp ENTER       &trans           &trans
             >;
         };
     };
